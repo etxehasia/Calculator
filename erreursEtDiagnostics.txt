@@ -1,0 +1,36 @@
+ERREUR:
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+ACTION:
+C:\dev\r402\Calculator>.\gradlew wrapper --warning-mode=all
+
+BUILD SUCCESSFUL in 612ms
+1 actionable task: 1 up-to-date
+C:\dev\r402\Calculator>gradle buiild --warning-mode=all
+'gradle' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+
+ACTION:
+C:\dev\r402\Calculator>.\gradlew build --warning-mode=all
+
+> Task :test
+The automatic loading of test framework implementation dependencies has been deprecated. 
+This is scheduled to be removed in Gradle 9.0. 
+Declare the desired test framework directly on the test suite or explicitly declare the test framework implementation 
+dependencies on the test's runtime classpath. 
+Consult the upgrading guide for further information: 
+https://docs.gradle.org/8.3/userguide/upgrading_version_8.html#test_framework_implementation_dependencies
+
+CalculatorTests > add(int, int, int) > 0 + 1 = 1 PASSED
+
+CalculatorTests > add(int, int, int) > 1 + 2 = 3 PASSED
+
+CalculatorTests > add(int, int, int) > 49 + 51 = 100 PASSED
+
+CalculatorTests > add(int, int, int) > 1 + 100 = 101 PASSED
+
+CalculatorTests > 1 + 1 = 2 PASSED
+
+BUILD SUCCESSFUL in 1s
+4 actionable tasks: 2 executed, 2 up-to-date
+C:\dev\r402\Calculator>
