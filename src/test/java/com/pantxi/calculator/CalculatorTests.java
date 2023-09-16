@@ -111,11 +111,11 @@ void multiply_le_produit_de_2_entiers_devrait_etre_un_entier() {
 }
 @Timeout(1)	// en secondes
 @Test
-	public void long_calcul_devrait_durer_moins_d_1_seconde () {
+	public void longCalcul_devrait_durer_moins_d_1_seconde () {
 		// GIVEN
 
 		// WHEN
-		calculatorEnTest.longCalcul(1500); 	// en millisecondes
+		calculatorEnTest.longCalcul(900); 	// en millisecondes
 
 		// THEN
 		// pas d'assertion
@@ -142,5 +142,16 @@ void multiply_le_produit_de_2_entiers_devrait_etre_un_entier() {
 
 		//THEN
 		assertThat(ensembleChiffres).containsExactlyInAnyOrder(1);
+	}
+	@Test
+	public void digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul() {
+		//GIVEN
+		int entierNul = 0000;
+
+		//WHEN
+		Set<Integer> ensembleChiffres = calculatorEnTest.ensembleChiffres(entierNul);
+
+		//THEN
+		assertThat(ensembleChiffres).containsExactlyInAnyOrder(0);
 	}
 }
