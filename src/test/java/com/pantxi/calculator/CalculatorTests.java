@@ -17,6 +17,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.text.MessageFormat;	// pour formater les System.out.println
 import java.time.Duration;	// pour mesurer la durée totale des tests
 import java.time.Instant;	// pour mesurer la durée totale des tests
+import java.util.Set;		// pour l'ensemble des chiffres d'un entier
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -119,4 +120,27 @@ void multiply_le_produit_de_2_entiers_devrait_etre_un_entier() {
 		// THEN
 		// pas d'assertion
 }
+@Test
+	public void digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif() {
+		//GIVEN
+		int entierPositif = 97689;
+
+		//WHEN
+		Set<Integer> ensembleChiffres = calculatorEnTest.ensembleChiffres(entierPositif);
+
+		//THEN
+		assertThat(ensembleChiffres).containsExactlyInAnyOrder(6, 7, 8, 9);
+}
+
+	@Test
+	public void digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif() {
+		//GIVEN
+		int entierNegatif = -1;
+
+		//WHEN
+		Set<Integer> ensembleChiffres = calculatorEnTest.ensembleChiffres(entierNegatif);
+
+		//THEN
+		assertThat(ensembleChiffres).containsExactlyInAnyOrder(1);
+	}
 }
