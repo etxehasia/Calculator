@@ -22,8 +22,8 @@ jobs:
              uses: dorny/test-reporter@v1
              if: success() || failure()
              with:
-             name: JUnit Tests
-             path: build/test-results/test/TEST-*.xml
+                 name: JUnit Tests
+                 path: build/test-results/test/TEST-*.xml
              reporter: java-junit
            - name: JaCoCo Code Coverage Report
              id: jacoco_reporter
