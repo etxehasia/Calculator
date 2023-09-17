@@ -24,7 +24,7 @@ jobs:
              with:
                  name: JUnit Tests
                  path: build/test-results/test/TEST-*.xml
-             reporter: java-junit
+                 reporter: java-junit
            - name: JaCoCo Code Coverage Report
              id: jacoco_reporter
              uses: PavanMudigonda/jacoco-reporter@v4.8
