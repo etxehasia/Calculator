@@ -28,11 +28,13 @@ test {
 	testLogging {
 		events "passed", "skipped", "failed"
 	}
+	finalizedBy jacocoTestReport
 }
 
 jacocoTestReport {
 	dependsOn test
 	reports {
-		xml.required = true
+		xml.required = false
+		html.outputLocation=layout.buildDirectory.dir('htmlReport')
 	}
 }
