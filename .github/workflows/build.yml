@@ -1,6 +1,5 @@
 name: Java CI
-on: [push]
-jobs:
+on: push
  build:
  runs-on: windows-latest
  steps:
