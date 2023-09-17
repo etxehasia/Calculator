@@ -34,8 +34,7 @@ test {
 jacocoTestReport {
 	dependsOn test
 	reports {
-		xml.required = false
-		csv.required = false
-		html.outputLocation = layout.getProjectDirectory().dir('htmlReport')
+		xml.required = true
+		html.outputLocation=layout.buildDirectory.dir('reports/jacoco/test')
 	}
 }
