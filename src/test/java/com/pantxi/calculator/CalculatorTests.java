@@ -53,7 +53,6 @@ class CalculatorTests {
 		System.out.println(MessageFormat.format("Duree des tests : {0} ms", duree));
 	}
 
-
 	@Test
 	@DisplayName("1 + 2 = 3")
 	void add_la_somme_de_2_entiers_devrait_etre_un_entier() {
@@ -68,7 +67,6 @@ class CalculatorTests {
 		//assertEquals(3, calculator.add(1, 2), "1 + 2 should equal 3"); // JUnit
 		assertThat(somme).isEqualTo(3);	// assertJ
 	}
-
 
 	@DisplayName("Somme de 2 int " )
 	@ParameterizedTest(name = "{0} + {1} = {2}")

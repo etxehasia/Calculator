@@ -6,6 +6,7 @@ public class Main {
         int somme = c.add(1,2);
         System.out.println("Hello World");
         System.out.println("1 + 2 = " + somme);
+        System.out.println("1 + 2 = " + somme);
     }
 }
 
