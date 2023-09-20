@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pantxi.calculator.CalculatorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-09-20T09:53:32" hostname="IUTINFOMM08" time="1.337">
+<testsuite name="com.pantxi.calculator.CalculatorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-09-20T10:11:33" hostname="IUTINFOMM08" time="1.351">
   <properties/>
-  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif()" classname="com.pantxi.calculator.CalculatorTest" time="0.247"/>
-  <testcase name="longCalcul_devrait_durer_moins_d_1_seconde()" classname="com.pantxi.calculator.CalculatorTest" time="0.914"/>
+  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif()" classname="com.pantxi.calculator.CalculatorTest" time="0.24"/>
+  <testcase name="longCalcul_devrait_durer_moins_d_1_seconde()" classname="com.pantxi.calculator.CalculatorTest" time="0.927"/>
   <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif()" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
-  <testcase name="Produit de 2 int" classname="com.pantxi.calculator.CalculatorTest" time="0.007"/>
-  <testcase name="digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul()" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
+  <testcase name="Produit de 2 int" classname="com.pantxi.calculator.CalculatorTest" time="0.009"/>
+  <testcase name="digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
   <testcase name="1 + 2 = 3" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
-  <testcase name="0 + 1 = 1" classname="com.pantxi.calculator.CalculatorTest" time="0.026"/>
+  <testcase name="0 + 1 = 1" classname="com.pantxi.calculator.CalculatorTest" time="0.029"/>
   <testcase name="1 + 2 = 3" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
-  <testcase name="49 + 51 = 100" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
-  <testcase name="1 + 100 = 101" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="49 + 51 = 100" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
+  <testcase name="1 + 100 = 101" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
   <testcase name="2147483646 + 1 = 2147483647" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
   <system-out><![CDATA[Tic chrono avant tous les tests
 Tic chrono apres tous les tests
-Duree des tests : 1351 millisecondes
-Duree des tests : 1?351 ms
+Duree des tests : 1362 millisecondes
+Duree des tests : 1?362 ms
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
