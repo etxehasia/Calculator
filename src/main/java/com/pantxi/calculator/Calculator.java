@@ -36,7 +36,6 @@ public class Calculator {
 		catch(InterruptedException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public Set<Integer> ensembleChiffres(int pNombre) {

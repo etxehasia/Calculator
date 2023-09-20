@@ -31,6 +31,7 @@ test {
 	finalizedBy jacocoTestReport
 }
 
+
 jacocoTestReport {
 	dependsOn test
 	reports {
@@ -38,3 +39,5 @@ jacocoTestReport {
 		html.outputLocation=layout.buildDirectory.dir('reports/jacoco/test')
 	}
 }
+
+

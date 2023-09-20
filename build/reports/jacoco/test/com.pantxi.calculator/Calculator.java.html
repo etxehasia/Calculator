@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Calculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Calculator</a> &gt; <a href="index.source.html" class="el_package">com.pantxi.calculator</a> &gt; <span class="el_source">Calculator.java</span></div><h1>Calculator.java</h1><pre class="source lang-java linenums">/*
+ * Copyright 2015-2022 the original author or authors.
+ *
+ * All rights reserved. This program and the accompanying materials are
+ * made available under the terms of the Eclipse Public License v2.0 which
+ * accompanies this distribution and is available at
+ *
+ * http://www.eclipse.org/legal/epl-v20.html
+ */
+
+package com.pantxi.calculator;
+
+
+import java.util.HashSet;
+import java.util.Set;
+
+<span class="fc" id="L17">public class Calculator {</span>
+
+	public int add(int a, int b) {
+<span class="fc" id="L20">		return a + b;</span>
+	}
+	public double add(double a, double b) {
+<span class="nc" id="L23">		return a + b;</span>
+	}
+	public int multiply(int a, int b) {
+<span class="fc" id="L26">		return a * b;</span>
+	}
+	public double multiply(double a, double b) {
+<span class="nc" id="L29">		return a * b;</span>
+	}
+	public void longCalcul(int ms) {
+		// attendre ms millisecondes
+		try {
+<span class="fc" id="L34">			Thread.sleep(ms);</span>
+		}
+<span class="nc" id="L36">		catch(InterruptedException e) {</span>
+<span class="nc" id="L37">			e.printStackTrace();</span>
+<span class="fc" id="L38">		}</span>
+<span class="fc" id="L39">	}</span>
+
+	public Set&lt;Integer&gt; ensembleChiffres(int pNombre) {
+<span class="fc" id="L42">		Set&lt;Integer&gt; entiers = new HashSet&lt;Integer&gt;(); // ensemble d'entiers vide</span>
+<span class="fc" id="L43">		String chaineDuNombre = String.valueOf(pNombre); 	// Ã©quivalent du nbre en chÃ¢ine de caractÃ¨res</span>
+
+		// Parcours de la chaÃ®ne et ajout de chaque Ã©lÃ©ment dans l'ensemble
+<span class="fc bfc" id="L46" title="All 2 branches covered.">		for (int i=0; i&lt;chaineDuNombre.length(); i++) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">			if (chaineDuNombre.charAt(i) != '-')</span>
+			{
+<span class="fc" id="L49">				entiers.add(Integer.parseInt(chaineDuNombre, i, i+1, 10));</span>
+				/* retourne l'Ã©quivalent en entier de la portion de chaÃ®ne comprise dans l'intervalle [i, i+1[.
+				   LÃ¨ve une exception si la conversion en entier n'est pas possible.
+				*/
+			}
+		}
+<span class="fc" id="L55">		return entiers;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
