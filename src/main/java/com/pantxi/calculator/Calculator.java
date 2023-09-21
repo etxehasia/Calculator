@@ -10,14 +10,21 @@
 
 package com.pantxi.calculator;
 
-
 import java.util.HashSet;
 import java.util.Set;
 
+import static java.lang.Double.valueOf;
+
 public class Calculator {
 
-	public int add(int opG, int opD) {
-		return opG + opD;
+	public int add(int opG, int opD) throws Throwable {
+
+		double somme = (double) opG + (double) opD;
+		if ((somme > Integer.MAX_VALUE) || (somme < Integer.MIN_VALUE))
+		{
+			throw new RuntimeException();
+		}
+		return (int) somme;
 	}
 	public int multiply(int opG, int opD) {
 		return opG * opD;

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pantxi.calculator.CalculatorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-09-21T02:52:21" hostname="IUTINFOMM08" time="1.313">
+<testsuite name="com.pantxi.calculator.CalculatorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-09-21T09:29:45" hostname="IUTINFOMM08" time="1.145">
   <properties/>
-  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif()" classname="com.pantxi.calculator.CalculatorTest" time="0.216"/>
-  <testcase name="longCalcul_devrait_durer_moins_d_1_seconde()" classname="com.pantxi.calculator.CalculatorTest" time="0.93"/>
-  <testcase name="1 + 2 = 3" classname="com.pantxi.calculator.CalculatorTest" time="0.006"/>
-  <testcase name="Produit de 2 int" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
-  <testcase name="0 + 1 = 1" classname="com.pantxi.calculator.CalculatorTest" time="0.035"/>
+  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif()" classname="com.pantxi.calculator.CalculatorTest" time="0.124"/>
+  <testcase name="longCalcul_devrait_durer_moins_d_1_seconde()" classname="com.pantxi.calculator.CalculatorTest" time="0.91"/>
+  <testcase name="add_devrait_lever_une_exception_si_somme_hors_intervalle_des_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.005"/>
+  <testcase name="add_devrait_calculer_la_somme_de_deux_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.003"/>
+  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="0 + 1 = 1" classname="com.pantxi.calculator.CalculatorTest" time="0.028"/>
   <testcase name="1 + 2 = 3" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
-  <testcase name="49 + 51 = 100" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
-  <testcase name="1 + 100 = 101" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
-  <testcase name="2147483646 + 1 = 2147483647" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
-  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif()" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
-  <testcase name="digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="-2 + 2 = 0" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="0 + 0 = 0" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="-1 + -2 = -3" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul()" classname="com.pantxi.calculator.CalculatorTest" time="0.0"/>
   <system-out><![CDATA[Tic chrono avant tous les tests
 Tic chrono apres tous les tests
-Duree des tests : 1327 millisecondes
-Duree des tests : 1?327 ms
+Duree des tests : 1154 millisecondes
+Duree des tests : 1?154 ms
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

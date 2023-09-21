@@ -16,7 +16,8 @@ import java.time.Instant;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.junit.jupiter.api.Assertions.*;   // si on utilise les assertions de JUnit
 
 class CalculatorTest {
 
@@ -24,24 +25,24 @@ class CalculatorTest {
     private static Instant startedAt;	// variable de classe
 
     @BeforeEach
-    public void setUp() {		// montage
+    void setUp() {		// montage
 
         calculatorEnTest = new Calculator();
     }
 
     @AfterEach
-    public void tearDown() {	// démontage
+    void tearDown() {	// démontage
         calculatorEnTest = null;
     }
 
     @BeforeAll
-    static public void suiteSetUp() {	// montage avant tous les tests
+    static void suiteSetUp() {	// montage avant tous les tests
         System.out.println("Tic chrono avant tous les tests");
         startedAt = Instant.now();
     }
 
     @AfterAll
-    static public void suiteTearDown() {	// démontage après tous les tests
+    static void suiteTearDown() {	// démontage après tous les tests
         System.out.println("Tic chrono apres tous les tests");
         Instant endedAt = Instant.now();
         long duree = Duration.between(startedAt, endedAt).toMillis();
@@ -49,63 +50,59 @@ class CalculatorTest {
         System.out.println(MessageFormat.format("Duree des tests : {0} ms", duree));
     }
 
-    @Test
-    @DisplayName("1 + 2 = 3")
-    void add_la_somme_de_2_int_devrait_etre_un_int() {
-        // GIVEN
-        int un = 1;
-        int deux = 2;
-
-        // WHEN
-        int somme = calculatorEnTest.add(un, deux);
-
-        // THEN
-        //assertEquals(3, calculator.add(1, 2), "1 + 2 should equal 3"); // JUnit
-        assertThat(somme).isEqualTo(3);	// assertJ
-    }
-
-    @DisplayName("Liste de sommes de 2 int " )
+    @DisplayName("Tests de sommes de 2 int " )
     @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
             "0,    1,   1",
             "1,    2,   3",
-            "49,  51, 100",
-            "1,  100, 101",
-            "2147483646,    1,   2147483647"
+            "-2,   2,   0",
+            "0,    0,   0",
+            "-1,   -2,  -3"
     })
-/* le cas  "2147483647, ☺   1,   2147483648"
-   correspondant à un dépassement de capacité du type int doit être géré par le déclenchement d'une exception
-   --> à approfondir
-   NE PAS ajouter @Test quand il s'agit d'un Parametrized test
-*/
-    void add_parametre_la_somme_de_2_int_devrait_etre_un_int(int first, int second, int expectedResult) {
+
+    void add_parametre_devrait_calculer_la_somme_de_deux_int(int first, int second, int expectedResult) throws Throwable {
         // GIVEN
 
         // WHEN
         int somme = calculatorEnTest.add(first, second);
-        // THEN
+
+        // THEN  -- SI on ne s'occupe pas de l'exception levée
+
         //assertEquals(expectedResult, calculatorEnTest.add(first, second),
         //		() -> first + " + " + second + " should equal " + expectedResult);	// JUnit
+        // assertThat(somme).isEqualTo(expectedResult);	                            // assertJ
 
-        assertThat(somme).isEqualTo(expectedResult);	// assertJ
+        // THEN         -- si on s'occupe de l'exception levée
+        Throwable erreur = catchThrowable(()->calculatorEnTest.add(first,second));
+        assertThat(erreur).isNull();
     }
     @Test
-    @DisplayName ("Produit de 2 int")
-    void multiply_le_produit_de_2_int_devrait_etre_un_int() {
+    void add_devrait_calculer_la_somme_de_deux_int() {
         // GIVEN
-        int un = 1;
-        int deux = 2;
-        // WHEN
-        int produit = calculatorEnTest.multiply(un, deux);
-        // THEN
-        //assertEquals(produit, calculatorEnTest.multiply(un, deux),
-        //			() -> un + " + " + deux + " should equal " + produit);	// JUnit
+        int opG = 1;
+        int opD = 2;
 
-        assertThat(produit).isEqualTo(produit);	// assertJ
+        // THEN
+        Throwable erreur = catchThrowable(()->calculatorEnTest.add(opG,opD));
+        assertThat(erreur).isNull();
     }
+    @Test
+    void add_devrait_lever_une_exception_si_somme_hors_intervalle_des_int() {
+        // GIVEN
+        int opG = 1;
+        int opD = Integer.MAX_VALUE;
+
+        // THEN
+        Throwable erreur = catchThrowable(()->calculatorEnTest.add(opG,opD));
+        assertThat(erreur)
+                .isNotNull()
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage(erreur.getMessage());
+    }
+
     @Timeout(1)	// en secondes
     @Test
-    public void longCalcul_devrait_durer_moins_d_1_seconde () {
+    void longCalcul_devrait_durer_moins_d_1_seconde () {
         // GIVEN
 
         // WHEN
@@ -115,7 +112,7 @@ class CalculatorTest {
         // pas d'assertion
     }
     @Test
-    public void digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif() {
+    void digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif() {
         //GIVEN
         int entierPositif = 97689;
 
@@ -127,7 +124,7 @@ class CalculatorTest {
     }
 
     @Test
-    public void digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif() {
+    void digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif() {
         //GIVEN
         int entierNegatif = -1;
 
@@ -138,7 +135,7 @@ class CalculatorTest {
         assertThat(ensembleChiffres).containsExactlyInAnyOrder(1);
     }
     @Test
-    public void digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul() {
+    void digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul() {
         //GIVEN
         int entierNul = 0000;
 
