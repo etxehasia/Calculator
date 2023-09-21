@@ -1,6 +1,12 @@
 package com.pantxi.calculator;
 
 import org.junit.jupiter.api.*;
+/*
+L'instruction : import org.junit.jupiter.api.*     inclut (pour notre code) :
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+ */
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -45,7 +51,7 @@ class CalculatorTest {
 
     @Test
     @DisplayName("1 + 2 = 3")
-    void add_la_somme_de_2_entiers_devrait_etre_un_entier() {
+    void add_la_somme_de_2_int_devrait_etre_un_int() {
         // GIVEN
         int un = 1;
         int deux = 2;
@@ -58,7 +64,7 @@ class CalculatorTest {
         assertThat(somme).isEqualTo(3);	// assertJ
     }
 
-    @DisplayName("Somme de 2 int " )
+    @DisplayName("Liste de sommes de 2 int " )
     @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
             "0,    1,   1",
@@ -67,12 +73,12 @@ class CalculatorTest {
             "1,  100, 101",
             "2147483646,    1,   2147483647"
     })
-/* le cas  "2147483647,    1,   2147483648"
+/* le cas  "2147483647, ☺   1,   2147483648"
    correspondant à un dépassement de capacité du type int doit être géré par le déclenchement d'une exception
    --> à approfondir
    NE PAS ajouter @Test quand il s'agit d'un Parametrized test
 */
-    void add_la_somme_de_2_entiers_devrait_etre_un_entier(int first, int second, int expectedResult) {
+    void add_parametre_la_somme_de_2_int_devrait_etre_un_int(int first, int second, int expectedResult) {
         // GIVEN
 
         // WHEN
@@ -85,7 +91,7 @@ class CalculatorTest {
     }
     @Test
     @DisplayName ("Produit de 2 int")
-    void multiply_le_produit_de_2_entiers_devrait_etre_un_entier() {
+    void multiply_le_produit_de_2_int_devrait_etre_un_int() {
         // GIVEN
         int un = 1;
         int deux = 2;

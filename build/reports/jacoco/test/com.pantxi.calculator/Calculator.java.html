@@ -16,43 +16,37 @@ import java.util.Set;
 
 <span class="fc" id="L17">public class Calculator {</span>
 
-	public int add(int a, int b) {
-<span class="fc" id="L20">		return a + b;</span>
+	public int add(int opG, int opD) {
+<span class="fc" id="L20">		return opG + opD;</span>
 	}
-	public double add(double a, double b) {
-<span class="nc" id="L23">		return a + b;</span>
-	}
-	public int multiply(int a, int b) {
-<span class="fc" id="L26">		return a * b;</span>
-	}
-	public double multiply(double a, double b) {
-<span class="nc" id="L29">		return a * b;</span>
+	public int multiply(int opG, int opD) {
+<span class="fc" id="L23">		return opG * opD;</span>
 	}
 	public void longCalcul(int ms) {
 		// attendre ms millisecondes
 		try {
-<span class="fc" id="L34">			Thread.sleep(ms);</span>
+<span class="fc" id="L28">			Thread.sleep(ms);</span>
 		}
-<span class="nc" id="L36">		catch(InterruptedException e) {</span>
-<span class="nc" id="L37">			e.printStackTrace();</span>
-<span class="fc" id="L38">		}</span>
-<span class="fc" id="L39">	}</span>
+<span class="nc" id="L30">		catch(InterruptedException e) {</span>
+<span class="nc" id="L31">			e.printStackTrace();</span>
+<span class="fc" id="L32">		}</span>
+<span class="fc" id="L33">	}</span>
 
 	public Set&lt;Integer&gt; ensembleChiffres(int pNombre) {
-<span class="fc" id="L42">		Set&lt;Integer&gt; entiers = new HashSet&lt;Integer&gt;(); // ensemble d'entiers vide</span>
-<span class="fc" id="L43">		String chaineDuNombre = String.valueOf(pNombre); 	// Ã©quivalent du nbre en chÃ¢ine de caractÃ¨res</span>
+<span class="fc" id="L36">		Set&lt;Integer&gt; entiers = new HashSet&lt;Integer&gt;(); // ensemble d'entiers vide</span>
+<span class="fc" id="L37">		String chaineDuNombre = String.valueOf(pNombre); 	// Ã©quivalent du nbre en chÃ¢ine de caractÃ¨res</span>
 
 		// Parcours de la chaÃ®ne et ajout de chaque Ã©lÃ©ment dans l'ensemble
-<span class="fc bfc" id="L46" title="All 2 branches covered.">		for (int i=0; i&lt;chaineDuNombre.length(); i++) {</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">			if (chaineDuNombre.charAt(i) != '-')</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">		for (int i=0; i&lt;chaineDuNombre.length(); i++) {</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">			if (chaineDuNombre.charAt(i) != '-')</span>
 			{
-<span class="fc" id="L49">				entiers.add(Integer.parseInt(chaineDuNombre, i, i+1, 10));</span>
+<span class="fc" id="L43">				entiers.add(Integer.parseInt(chaineDuNombre, i, i+1, 10));</span>
 				/* retourne l'Ã©quivalent en entier de la portion de chaÃ®ne comprise dans l'intervalle [i, i+1[.
 				   LÃ¨ve une exception si la conversion en entier n'est pas possible.
 				*/
 			}
 		}
-<span class="fc" id="L55">		return entiers;</span>
+<span class="fc" id="L49">		return entiers;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
