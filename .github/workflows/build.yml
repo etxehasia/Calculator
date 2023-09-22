@@ -24,15 +24,13 @@ jobs:
              run:  chmod +x ./gradlew
            - name: Build & test #and compute JaCoCo reports
              run: ./gradlew build #JacocoTestReport
-#
-#
-#         - name: Rapport de tests
-#            uses: dorny/test-reporter@v1
-#            if: success() || failure()
-#            with:
-#                name: JUnit Tests
-#                path: build/test-results/test/TEST-*.xml
-#                reporter: java-junit
+           - name: Rapport de tests
+             uses: dorny/test-reporter@v1
+             if: success() || failure()
+             with:
+               name: JUnit Tests
+               path: build/test-results/test/TEST-*.xml
+               reporter: java-junit
 #          - name: JaCoCo Code Coverage Report
 #            id: jacoco_reporter
 #            uses: PavanMudigonda/jacoco-reporter@v4.8
