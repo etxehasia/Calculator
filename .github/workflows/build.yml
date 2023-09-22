@@ -4,7 +4,7 @@ on: push
 
 jobs:
    build:
-       name : Le nom du Build
+       name : Action github realisation les tests + le build du projet Calculator
        runs-on: ubuntu-latest
        permissions:
             checks: write
