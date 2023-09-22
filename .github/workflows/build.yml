@@ -4,7 +4,7 @@ on: push
 
 jobs:
    build:
-       name : Integration continue - tests + build AUTO projet Calculator
+       name : Integration Continue = tests + build AUTO
        runs-on: ubuntu-latest
        permissions:
             checks: write
@@ -22,7 +22,7 @@ jobs:
              uses: gradle/gradle-build-action@v2
            - name: Make gradlew executable
              run:  chmod +x ./gradlew
-           - name: Build, test and compute JaCoCo reports
+           - name: Build & test #and compute JaCoCo reports
              run: ./gradlew build #JacocoTestReport
 #
 #
