@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pantxi.calculator.CalculatorTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-09-22T12:15:54" hostname="IUTINFOMM08" time="1.206">
+  <properties/>
+  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif()" classname="com.pantxi.calculator.CalculatorTest" time="0.164"/>
+  <testcase name="longCalcul_devrait_durer_moins_d_1_seconde()" classname="com.pantxi.calculator.CalculatorTest" time="0.917"/>
+  <testcase name="divide_devrait_lever_une_exception_quand_diviseur_est_0()" classname="com.pantxi.calculator.CalculatorTest" time="0.016"/>
+  <testcase name="add_devrait_lever_une_exception_si_somme_hors_intervalle_des_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
+  <testcase name="add_devrait_calculer_la_somme_de_deux_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.006"/>
+  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="0 + 1 = 1" classname="com.pantxi.calculator.CalculatorTest" time="0.025"/>
+  <testcase name="1 + 2 = 3" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="-2 + 2 = 0" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="0 + 0 = 0" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="-1 + -2 = -3" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul()" classname="com.pantxi.calculator.CalculatorTest" time="0.0"/>
+  <testcase name="divide_devrait_retourner_zero_quand_diviseur_plus_grand_que_dividende()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <system-out><![CDATA[Tic chrono avant tous les tests
+Tic chrono apres tous les tests
+Duree des tests : 1215 millisecondes
+Duree des tests : 1 215 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
