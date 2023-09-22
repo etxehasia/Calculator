@@ -23,7 +23,7 @@ jobs:
            - name: Make gradlew executable
              run:  chmod +x ./gradlew
            - name: Build, test #and compute JaCoCo reports
-             run: ./gradlew build #JacocoTestReport
+             run: ./gradlew build JacocoTestReport
 #
 #
 #         - name: Rapport de tests
