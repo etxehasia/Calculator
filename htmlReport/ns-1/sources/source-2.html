@@ -77,11 +77,20 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;package com.pantxi.calculator;
 &nbsp;
 <b class="nc">&nbsp;public class Main {</b>
-&nbsp;    public static void main(String[] args) {
-<b class="nc">&nbsp;        Calculator c = new Calculator();</b>
-<b class="nc">&nbsp;        int somme = c.add(1,2);</b>
+&nbsp;    public static void main(String[] args) throws Throwable {
+&nbsp;
 <b class="nc">&nbsp;        System.out.println(&quot;Hello World&quot;);</b>
-<b class="nc">&nbsp;        System.out.println(&quot;1 + 2 = &quot; + somme);</b>
+<b class="nc">&nbsp;        Calculator c = new Calculator();</b>
+&nbsp;//        try {
+<b class="nc">&nbsp;            int somme = c.add(1,2147483647);</b>
+<b class="nc">&nbsp;            System.out.println(&quot;1 + 2147483647 = &quot; + somme);</b>
+&nbsp;            //        }
+&nbsp;            /*
+&nbsp;                    catch   (RuntimeException e) {
+&nbsp;                        System.out.println(&quot;&quot;);
+&nbsp;                    }
+&nbsp;            */
+&nbsp;
 &nbsp;    }
 &nbsp;}
 &nbsp;
@@ -109,7 +118,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-09-16 23:02</div>
+    <div style="float:right;">generated on 2023-09-22 21:56</div>
 </div>
 </body>
 </html>

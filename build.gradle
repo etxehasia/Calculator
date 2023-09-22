@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'eclipse' // optional (to generate Eclipse project files)
 	id 'idea' // optional (to generate IntelliJ IDEA project files)
-	id 'jacoco'
+	//id 'jacoco'
 }
 
 repositories {
@@ -28,9 +28,9 @@ test {
 	testLogging {
 		events "passed", "skipped", "failed"
 	}
-    finalizedBy jacocoTestReport
+   // finalizedBy jacocoTestReport
 }
-
+/*
 jacocoTestReport {
 	dependsOn test
 	reports {
@@ -38,3 +38,4 @@ jacocoTestReport {
 		html.outputLocation=layout.buildDirectory.dir('reports/jacoco/test')
 	}
 }
+*/

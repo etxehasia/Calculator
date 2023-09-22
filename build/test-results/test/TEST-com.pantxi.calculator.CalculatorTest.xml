@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pantxi.calculator.CalculatorTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-09-22T18:58:57" hostname="IUTINFOMM08" time="1.273">
+<testsuite name="com.pantxi.calculator.CalculatorTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-09-22T19:56:56" hostname="IUTINFOMM08" time="1.175">
   <properties/>
-  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif()" classname="com.pantxi.calculator.CalculatorTest" time="0.203"/>
-  <testcase name="longCalcul_devrait_durer_moins_d_1_seconde()" classname="com.pantxi.calculator.CalculatorTest" time="0.919"/>
-  <testcase name="divide_devrait_lever_une_exception_quand_diviseur_est_0()" classname="com.pantxi.calculator.CalculatorTest" time="0.028"/>
-  <testcase name="add_devrait_lever_une_exception_si_somme_hors_intervalle_des_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.003"/>
-  <testcase name="add_devrait_calculer_la_somme_de_deux_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.005"/>
-  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif()" classname="com.pantxi.calculator.CalculatorTest" time="0.0"/>
-  <testcase name="0 + 1 = 1" classname="com.pantxi.calculator.CalculatorTest" time="0.028"/>
+  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif()" classname="com.pantxi.calculator.CalculatorTest" time="0.126"/>
+  <testcase name="longCalcul_devrait_durer_moins_d_1_seconde()" classname="com.pantxi.calculator.CalculatorTest" time="0.92"/>
+  <testcase name="divide_devrait_lever_une_exception_quand_diviseur_est_0()" classname="com.pantxi.calculator.CalculatorTest" time="0.011"/>
+  <testcase name="add_devrait_lever_une_exception_si_somme_hors_intervalle_des_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
+  <testcase name="add_devrait_calculer_la_somme_de_deux_int()" classname="com.pantxi.calculator.CalculatorTest" time="0.004"/>
+  <testcase name="digitsSet_devrait_retourner_les_chiffres_d_un_entier_negatif()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="0 + 1 = 1" classname="com.pantxi.calculator.CalculatorTest" time="0.023"/>
   <testcase name="1 + 2 = 3" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
-  <testcase name="-2 + 2 = 0" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
+  <testcase name="-2 + 2 = 0" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
   <testcase name="0 + 0 = 0" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
-  <testcase name="-1 + -2 = -3" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
-  <testcase name="digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul()" classname="com.pantxi.calculator.CalculatorTest" time="0.0"/>
+  <testcase name="-1 + -2 = -3" classname="com.pantxi.calculator.CalculatorTest" time="0.002"/>
+  <testcase name="digitsSet_devrait_retourner_le_chiffre_0_d_un_entier_nul()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
   <testcase name="divide_devrait_retourner_zero_quand_diviseur_plus_grand_que_dividende()" classname="com.pantxi.calculator.CalculatorTest" time="0.001"/>
   <system-out><![CDATA[Tic chrono avant tous les tests
 Tic chrono apres tous les tests
-Duree des tests : 1283 millisecondes
-Duree des tests : 1 283 ms
+Duree des tests : 1187 millisecondes
+Duree des tests : 1?187 ms
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
