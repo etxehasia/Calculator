@@ -20,9 +20,10 @@ jobs:
              uses: gradle/gradle-build-action@v2
            - name: Make gradlew executable
              run:  chmod +x ./gradlew
-           - name: Build, test and compute JaCoCo reports
+           - name: Build, #test and compute JaCoCo reports
              run: ./gradlew build #acocoTestReport
-#
+           - name: Test #and compute JaCoCo reports
+             run: ./gradlew test #acocoTestReport#
 #
 #
 #
