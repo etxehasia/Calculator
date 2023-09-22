@@ -28,7 +28,7 @@ test {
 	testLogging {
 		events "passed", "skipped", "failed"
 	}
-	finalizedBy jacocoTestReport
+    finalizedBy jacocoTestReport
 }
 
 
@@ -39,5 +39,3 @@ jacocoTestReport {
 		html.outputLocation=layout.buildDirectory.dir('reports/jacoco/test')
 	}
 }
-
-

@@ -17,22 +17,24 @@ import static java.lang.Double.valueOf;
 
 public class Calculator {
 
-	public int add(int opG, int opD) throws Throwable {
+	public int add(int opG, int opD) throws Exception {
 
 		double somme = (double) opG + (double) opD;
 		if ((somme > Integer.MAX_VALUE) || (somme < Integer.MIN_VALUE))
 		{
-			throw new RuntimeException();
+			throw new RuntimeException("somme en dehors des valeurs du type int");
 		}
 		return (int) somme;
 	}
-	public int multiply(int opG, int opD) {
-		return opG * opD;
+	public int divide(int opG, int opD) {
+		if (opD == 0) {
+			throw new ArithmeticException("division par zero");
+		}
+		return opG / opD;
 	}
 	public void longCalcul(int ms) {
 		// attendre ms millisecondes
-		try {
-			Thread.sleep(ms);
+		try { 	Thread.sleep(ms);
 		}
 		catch(InterruptedException e) {
 			e.printStackTrace();
@@ -56,3 +58,4 @@ public class Calculator {
 		return entiers;
 	}
 }
+

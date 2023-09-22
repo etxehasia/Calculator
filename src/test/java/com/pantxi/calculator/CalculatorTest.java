@@ -16,7 +16,7 @@ import java.time.Instant;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.assertj.core.api.Assertions.catchException;
 import static org.junit.jupiter.api.Assertions.*;   // si on utilise les assertions de JUnit
 
 class CalculatorTest {
@@ -50,7 +50,7 @@ class CalculatorTest {
         System.out.println(MessageFormat.format("Duree des tests : {0} ms", duree));
     }
 
-    @DisplayName("Tests de sommes de 2 int " )
+    @DisplayName("Plusieurs tests de sommes simples de 2 int " )
     @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
             "0,    1,   1",
@@ -60,7 +60,7 @@ class CalculatorTest {
             "-1,   -2,  -3"
     })
 
-    void add_parametre_devrait_calculer_la_somme_de_deux_int(int first, int second, int expectedResult) throws Throwable {
+    void add_parametre_devrait_calculer_la_somme_de_deux_int(int first, int second, int expectedResult) throws Exception {
         // GIVEN
 
         // WHEN
@@ -70,34 +70,83 @@ class CalculatorTest {
 
         //assertEquals(expectedResult, calculatorEnTest.add(first, second),
         //		() -> first + " + " + second + " should equal " + expectedResult);	// JUnit
-        // assertThat(somme).isEqualTo(expectedResult);	                            // assertJ
-
-        // THEN         -- si on s'occupe de l'exception levée
-        Throwable erreur = catchThrowable(()->calculatorEnTest.add(first,second));
-        assertThat(erreur).isNull();
+        assertThat(somme).isEqualTo(expectedResult);	                            // assertJ
     }
+    @Test
+    void add_devrait_calculer_la_somme_de_deux_int() throws Exception {
+        // GIVEN
+        int opG = 1;
+        int opD = 2;
+
+        // WHEN
+        int somme = calculatorEnTest.add(opG,opD);
+
+        //THEN
+        assertThat(somme).isEqualTo(3);
+    }
+
+    /*  Ci-dessous, une seconde possibilité de développement de la précédente méthode.
+        Je la trouve moins intéressante, car elle ne vérifie pas que le résultat de l'opération (add) est correct,
+        mais uniquement le fait qu'il n'y a pas eu d'exception levée.
+        A noter que la signature des 2 méthodes n'est pas exactement la même.
+
     @Test
     void add_devrait_calculer_la_somme_de_deux_int() {
         // GIVEN
         int opG = 1;
         int opD = 2;
 
+        // WHEN
+        Exception erreur = catchException(()->calculatorEnTest.add(opG,opD));
+
         // THEN
-        Throwable erreur = catchThrowable(()->calculatorEnTest.add(opG,opD));
-        assertThat(erreur).isNull();
+        assertThat(erreur)
+                .isNull();
     }
+    */
     @Test
     void add_devrait_lever_une_exception_si_somme_hors_intervalle_des_int() {
         // GIVEN
         int opG = 1;
         int opD = Integer.MAX_VALUE;
 
+        // WHEN
+        Exception erreur = catchException(()->calculatorEnTest.add(opG,opD));
+
         // THEN
-        Throwable erreur = catchThrowable(()->calculatorEnTest.add(opG,opD));
-        assertThat(erreur)
+           assertThat(erreur)
                 .isNotNull()
                 .isInstanceOf(RuntimeException.class)
-                .hasMessage(erreur.getMessage());
+                .hasMessage("somme en dehors des valeurs du type int");
+    }
+
+    @Test
+    void divide_devrait_retourner_zero_quand_diviseur_plus_grand_que_dividende()
+    {
+        // GIVEN
+        int opG = 1;
+        int opD = 2;
+
+        // WHEN
+        int quotient = calculatorEnTest.divide(opG,opD);
+
+        //THEN
+        assertThat(quotient).isEqualTo(0);
+    }
+    @Test
+    void divide_devrait_lever_une_exception_quand_diviseur_est_0()
+    {
+        int opG = 1;
+        int opD = 0;
+
+        // WHEN
+        Throwable erreur = catchException(()->calculatorEnTest.divide(opG,opD));
+
+        // THEN
+        assertThat(erreur)
+                .isNotNull()
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessage("division par zero");
     }
 
     @Timeout(1)	// en secondes
