@@ -4,6 +4,7 @@ on: push
 
 jobs:
    build:
+       name : Le nom du Build
        runs-on: ubuntu-latest
        permissions:
             checks: write
