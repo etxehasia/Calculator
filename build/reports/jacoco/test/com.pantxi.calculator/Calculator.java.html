@@ -43,15 +43,15 @@ import static java.lang.Double.valueOf;
 
 	public Set&lt;Integer&gt; ensembleChiffres(int pNombre) {
 <span class="fc" id="L45">		Set&lt;Integer&gt; entiers = new HashSet&lt;Integer&gt;(); // ensemble d'entiers vide</span>
-<span class="fc" id="L46">		String chaineDuNombre = String.valueOf(pNombre); 	// équivalent du nbre en châine de caractères</span>
+<span class="fc" id="L46">		String chaineDuNombre = String.valueOf(pNombre); 	// Ã©quivalent du nbre en chÃ¢ine de caractÃ¨res</span>
 
-		// Parcours de la chaîne et ajout de chaque élément dans l'ensemble
+		// Parcours de la chaÃ®ne et ajout de chaque Ã©lÃ©ment dans l'ensemble
 <span class="fc bfc" id="L49" title="All 2 branches covered.">		for (int i=0; i&lt;chaineDuNombre.length(); i++) {</span>
 <span class="fc bfc" id="L50" title="All 2 branches covered.">			if (chaineDuNombre.charAt(i) != '-')</span>
 			{
 <span class="fc" id="L52">				entiers.add(Integer.parseInt(chaineDuNombre, i, i+1, 10));</span>
-				/* retourne l'équivalent en entier de la portion de chaîne comprise dans l'intervalle [i, i+1[.
-				   Lève une exception si la conversion en entier n'est pas possible.
+				/* retourne l'Ã©quivalent en entier de la portion de chaÃ®ne comprise dans l'intervalle [i, i+1[.
+				   LÃ¨ve une exception si la conversion en entier n'est pas possible.
 				*/
 			}
 		}
