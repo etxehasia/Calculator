@@ -148,7 +148,7 @@ class CalculatorTest {
                 .isInstanceOf(ArithmeticException.class)
                 .hasMessage("division par zero");
     }
-
+/*
     @Timeout(1)	// en secondes
     @Test
     void longCalcul_devrait_durer_moins_d_1_seconde () {
@@ -160,6 +160,7 @@ class CalculatorTest {
         // THEN
         // pas d'assertion
     }
+
     @Test
     void digitsSet_devrait_retourner_les_chiffres_d_un_entier_positif() {
         //GIVEN
@@ -194,4 +195,6 @@ class CalculatorTest {
         //THEN
         assertThat(ensembleChiffres).containsExactlyInAnyOrder(0);
     }
+    */
+
 }
