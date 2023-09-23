@@ -26,6 +26,10 @@ public class Calculator {
 		}
 		return (int) somme;
 	}
+	public Rationnel add (Rationnel opG, Rationnel opD) {
+		Rationnel somme = opG.additionner(opD);
+		return somme;
+	}
 	public int divide(int opG, int opD) {
 		if (opD == 0) {
 			throw new ArithmeticException("division par zero");
